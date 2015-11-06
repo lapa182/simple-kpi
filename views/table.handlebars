@@ -1,0 +1,23 @@
+<h1 style="font-weight: bold;font-size:14px; margin-left:4px;">Developer:
+    {{#each records}}
+    <span style="font-weight: normal;">{{this.user}}</span>
+    {{/each}}
+</h1>
+<table id="kpi" class="table table-bordered">
+    <thead>
+        <th style="text-align:left;border-left: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">Descrição</th>
+        <th style="text-align:left;border-left: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;border-right:1px solid #dcdcdd;">Meta</th>
+        <th style="text-align:left;border-right: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">Objectivos</th>
+        <th style="text-align:left;border-right: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">Observações</th>
+    </thead>
+    <tbody>
+    {{#each records}}
+        <tr>
+            <td style="border-left: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">{{this.Descricao}}</td>
+            <td style="border-right: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">{{this.Meta}}</td>
+            <td style="border-right: 1px solid #DCDCDD;border-left: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">{{this.Observacoes}}</td>
+            <td style="border-right: 1px solid #DCDCDD;border-left: 1px solid #DCDCDD;border-top: 1px solid #DCDCDD; border-bottom: 1px solid #DCDCDD;padding:8px;">{{this.Objectivos}}%</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

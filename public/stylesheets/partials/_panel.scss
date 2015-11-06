@@ -1,0 +1,13 @@
+.panel {
+    &.panel-default {
+        border-top-width: 3px;
+        border-top-color: #ffdd2c;
+        & > .table-responsive {
+            margin-bottom: 20px !important;
+        }
+        footer {
+            padding-left: 8px;
+            padding-bottom: 20px;
+        }
+    }
+}

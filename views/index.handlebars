@@ -1,0 +1,45 @@
+<header class="gw_header">
+    <h3>KPI Dashboard</h3>
+</header>
+
+<section class="panel panel-default">
+    <article class="table-responsive">
+        <table id="kpi" class="gw_table table table-striped table-bordered table-hover">
+            <thead>
+                <th class="gw_table_th" data-override="Descricao">Descrição</th>
+                <th class="gw_table_th">Meta</th>
+                <th class="gw_table_th" data-override="Observacoes">Observações</th>
+                <th class="gw_table_th">Objectivos</th>
+                <th class="gw_table_th" data-override="Objectivos">% Cumprida</th>
+            </thead>
+            <tbody>
+            {{#each data.records}}
+                <tr class="gw_grid_table_tr">
+                    <td class="gw_grid_table_td">{{this.descricao}}</td>
+                    <td class="gw_grid_table_td">{{this.meta}}</td>
+                    <td class="gw_grid_table_td">
+                        <div class="box-input">
+                            <p contenteditable="true" class="observacao" data-send="false"><p>
+                        </div>
+                    </td>
+                    <td class="gw_grid_table_td gw_grid_table_align__slider">
+                        <div class="box-input input-group">
+                          <div class="gw_component__slider"></div>
+                        </div>
+                    </td>
+                    <td class="gw_grid_table_td gw_grid_sourcing_td__slider">
+                        <span class="lower-offset"></span>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </article>
+    <footer>
+<!--        <input type="text" placeholder="Coloque seu primeiro e último nome" style="width:400px;" class="username form-control">-->
+        <button class="send-json btn btn-primary">Send It!</button>
+    </footer>
+</section>
+
+
+<div class="bb-alert alert-danger" style="display:none;"><span></span></div>

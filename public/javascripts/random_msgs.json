@@ -1,0 +1,17 @@
+{
+    "fail": {
+        "0": "A força não está com você, algo inesperado aconteceu.",
+        "1": "A Mewtwo has appeared and caos happened in json post!",
+        "2": "Pentakill inimigo! Talvez seja melhor tentar novamente.",
+        "3": "Um troll entrou no seu caminho, algo inesperado aconteceu.",
+        "4": "You... Should not... PASS! Well, at least your KPI didn't pass.",
+        "5": "Houston, we have a problem."
+    },
+    "success": {
+        "0": "May the force be with your KPI!",
+        "1": "The first rule of KPI Club is you don’t talk about KPI Club.",
+        "2": "Let's put a smile on that face!",
+        "3": "Hasta la vista, baby.",
+        "4": "Let the games begin."
+    }
+}
