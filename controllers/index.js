@@ -6,19 +6,19 @@ var nodemailer = require('nodemailer');
 var hbs = require('nodemailer-express-handlebars');
 var options = {
      viewEngine: {
-         extname: '.hbs',
+         extname: '.handlebars',
          layoutsDir: 'views/',
-         defaultLayout : 'layout',
+         defaultLayout : 'layouts/main',
          partialsDir : 'views/partials/'
      },
      viewPath: 'views/',
-     extName: '.hbs'
+     extName: '.handlebars'
  };
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'your-email@your-email.com',
-        pass: 'youpassword'
+        pass: 'you-pass'
     }
 });
 
@@ -49,14 +49,15 @@ router.post('/kpi.json', function(req, res, next) {
     var data = req.body;
     transporter.use('compile', hbs(options));
     transporter.sendMail({
-        from: 'igo.lapa@construlink.com',
-        to: 'igo.lapa@construlink.com',
+        from: 'igo.lapa@gatewit.com',
+        to: 'igo.lapa@gatewit.com',
         subject: 'hello',
         template: 'table',
         context: {
             records: data
         }
     }, function(err, response) {
+        console.log(err);
         transporter.close();
     });
     transporter.close();
