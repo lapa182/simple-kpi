@@ -120,50 +120,7 @@ module.exports = function (grunt) {
                     dest: '<%= paths.dist %>/<%= paths.images %>'
                 }]
             }
-        },
-
-        /**
-         * Premailer Parser Tasks
-         * ===============================
-         */
-        premailer: {
-            options: {
-                baseUrl: '<%= paths.distDomain %>'
-            },
-            dist: {
-                src: '<%= paths.src %>/<%= paths.email %>',
-                dest: '<%= paths.dist %>/<%= paths.email %>'
-            }
-        },
-
-        /**
-         * Test Mailer Tasks
-         * ===============================
-         */
-        nodemailer: {
-            options: {
-                transport: {
-                    type: 'SMTP',
-                    options: {
-                        service: 'Gmail',
-                        auth: {
-                            user: 'igo.lapa@gatewit.com',
-                            pass: 'epxal0br'
-                        }
-                    }
-                },
-                recipients: [
-                    {
-                        name: 'igo.lapa@gatewit.com',
-                        email: 'igo.lapa@gatewit.com'
-                    }
-                ]
-            },
-            dist: {
-                src: ['<%= paths.dist %>/<%= paths.email %>']
-            }
         }
-
     });
 
     [
@@ -171,9 +128,7 @@ module.exports = function (grunt) {
         'grunt-contrib-watch',
         'grunt-contrib-compass',
         'grunt-contrib-imagemin',
-        'grunt-contrib-clean',
-        'grunt-premailer',
-        'grunt-nodemailer',
+        'grunt-contrib-clean'
     ].forEach(grunt.loadNpmTasks);
 
     grunt.registerTask('default', 'dev');
@@ -188,16 +143,13 @@ module.exports = function (grunt) {
         'clean',
         'imagemin',
         'compass:dist',
-        'premailer:dist',
         'connect:dist'
     ]);
 
     grunt.registerTask('send', [
         'clean',
         'imagemin',
-        'compass:dist',
-        'premailer:dist',
-        'nodemailer'
+        'compass:dist'
     ]);
 
 };
